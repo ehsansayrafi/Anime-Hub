@@ -5,7 +5,7 @@
      <link rel="stylesheet" href="/anime.css">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <meta property="og:type" content="website">
-<title>CTK Anime Hub</title>
+<title>FranXX Anime</title>
 <meta name="title" content="<%= anime.attributes.canonicalTitle %>">
 <meta name="description" content="<%= anime.attributes.synopsis %>">
 <meta property="og:url" content="<%= url %>">
@@ -25,18 +25,18 @@
 
   <table class="complete-table">
     <tr class="oee" style="background:#f39816;">
-      <th class="a">Age Rating</th>
-      <th class="a">Episode</th>
-      <th class="a">Nsfw</th>
+      <th class="a">محدودیت سنی</th>
+      <th class="a">قسمت</th>
+      <th class="a">محتوای +18</th>
     </tr>
     <tr class="oee-container">
       <td class="b"><%= anime.attributes.ageRating  %></td>
       <td class="b"><%= data.episodeCount || "/" %></td>
-      <td class="b"><%= anime.attributes.nsfw ? "Y" : "N" %></td>
+      <td class="b"><%= anime.attributes.nsfw ? "بله" : "خیر" %></td>
     </tr>
   </table>
 
-  <p class="secuela">Content</p>
+  <p class="secuela">محتوا</p>
 
 </div>
 
