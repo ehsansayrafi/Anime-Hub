@@ -19,14 +19,19 @@
 <div class="header" style="background-image: url(<%= anime.attributes.coverImage ? anime.attributes.coverImage.large :  anime.attributes.posterImage.small %>)"></div>
 
 <div class="anime-card">
+
+  
+
   <img class="portada" src="<%= anime.attributes.posterImage.small %>" />
 
   <p class="estado" style="background:#0ebeff; color:#fff;"><%= anime.attributes.status.toUpperCase() %></p>
 
+  <p class="secuela" style="background:#eb3443;color:#fff;">اطلاعات انیمه</p>
+
   <table class="complete-table">
     <tr class="oee" style="background:#f39816;">
       <th class="a">محدودیت سنی</th>
-      <th class="a">قسمت</th>
+      <th class="a">تعداد اپیزود</th>
       <th class="a">محتوای +18</th>
     </tr>
     <tr class="oee-container">
@@ -36,7 +41,7 @@
     </tr>
   </table>
 
-  <p class="secuela">محتوا</p>
+  
 
 </div>
 
@@ -47,7 +52,7 @@
 
 <div class="body-container">
 
-  <div class="divspoiler">Sinopsis</div>
+  <div class="divspoiler" dir="rtl">توضیحات انیمه</div>
 
   <div>
     <p class="spoiler">
@@ -57,7 +62,7 @@
 
   <% let category = data.genre.split(",") %>
 
-  <div class="etq">
+  <div class="etq" >
   <% for(let i =0;i <= category.length - 1;i++) {%>
     <a><%= category[i] %></a>
     <% } %>
@@ -69,9 +74,9 @@
   <table class="all-music">
     <thead class="title-categoria">
       <tr style="background:#f39816;">
-        <th>Episode Name</th>
-        <th>Watch Link</th>
-        <th>Download Link</th>
+        <th>اپیزود های این انیمه</th>
+        <th>لینک تماشای آنلاین</th>
+        <th>لینک دانلود</th>
       </tr>
     </thead>
     <tbody class="info-music">
@@ -82,8 +87,8 @@
          <% let buff = new Buffer(`https://gogoanime.pe/${slug}-episode-${i + 1}`);
           let base64data = buff.toString('base64');
           %>
-        <td><a href="<%= `${url}/watch?data=${base64data}` %>">Watch Now</a></td>
-        <td><a href="<%= `${url}/download?data=${base64data}` %>">Download</a></td>
+        <td><a href="<%= `${url}/watch?data=${base64data}` %>">تماشای آنلاین</a></td>
+        <td><a href="<%= `${url}/download?data=${base64data}` %>">دانلود</a></td>
       </tr>
 
     <% } %>
